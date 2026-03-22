@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artist & Designer — Portfolio</title>
+  <meta name="description" content="Portfolio website for an artist and designer. Built with HTML, Tailwind CSS (CDN), and vanilla JavaScript." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--bg:#0f172a}
+    body{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+  </style>
+  <link rel="stylesheet" href="/styles/custom.css">
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <!-- Navigation -->
+  <header class="bg-white/60 backdrop-blur sticky top-0 z-40 border-b">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 text-slate-900">
+        <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-amber-300 rounded-full flex items-center justify-center text-white font-bold">AD</div>
+        <div>
+          <div class="text-lg font-semibold">Artist & Designer</div>
+          <div class="text-xs text-slate-500">Portfolio</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#portfolio" class="hover:text-slate-700">Portfolio</a>
+        <a href="#about" class="hover:text-slate-700">About</a>
+        <a href="#contact" class="hover:text-slate-700">Contact</a>
+      </nav>
+
+      <div class="md:hidden">
+        <button id="menuBtn" aria-label="Open menu" class="p-2 rounded-md hover:bg-slate-100">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <div id="mobileMenu" class="md:hidden hidden border-t">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#portfolio" class="block">Portfolio</a>
+        <a href="#about" class="block">About</a>
+        <a href="#contact" class="block">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="max-w-6xl mx-auto px-6 py-12">
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Crafting striking visual stories — art & design that moves.</h1>
+        <p class="mt-4 text-lg text-slate-600">I'm an artist and designer focused on editorial, illustration, and experiential brand work. Browse selected projects below or get in touch for collaborations.</p>
+        <div class="mt-6 flex gap-4">
+          <a href="#portfolio" class="inline-block bg-slate-900 text-white px-5 py-3 rounded-md shadow">View Work</a>
+          <a href="#contact" class="inline-block border border-slate-200 px-5 py-3 rounded-md">Contact</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-3 gap-2 w-48">
+          <div class="h-20 bg-gradient-to-br from-pink-400 to-purple-500 rounded"></div>
+          <div class="h-20 bg-gradient-to-br from-amber-300 to-rose-400 rounded"></div>
+          <div class="h-20 bg-gradient-to-br from-sky-400 to-indigo-500 rounded"></div>
+        </div>
+      </div>
+
+      <div class="rounded-lg overflow-hidden shadow-lg">
+        <img src="https://images.unsplash.com/photo-1504198458649-3128b932f49b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Artwork sample" class="w-full h-full object-cover">
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section id="portfolio" class="mt-16">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-semibold">Selected Projects</h2>
+        <p class="text-sm text-slate-500">Illustration · Editorial · Branding</p>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project Card -->
+        <article class="group bg-white rounded-lg overflow-hidden shadow" data-type="project">
+          <button class="w-full text-left" data-project-index="0">
+            <div class="h-48 bg-slate-200 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project 1" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Visual Identity — Font & Color Study</h3>
+              <p class="text-sm text-slate-500 mt-2">Brand systems and type-driven identities for editorial and small businesses.</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="group bg-white rounded-lg overflow-hidden shadow" data-type="project">
+          <button class="w-full text-left" data-project-index="1">
+            <div class="h-48 bg-slate-200 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project 2" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Illustration Series — "Urban Botanica"</h3>
+              <p class="text-sm text-slate-500 mt-2">A series of hand-drawn illustrations exploring city flora.</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="group bg-white rounded-lg overflow-hidden shadow" data-type="project">
+          <button class="w-full text-left" data-project-index="2">
+            <div class="h-48 bg-slate-200 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project 3" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Exhibition Graphics</h3>
+              <p class="text-sm text-slate-500 mt-2">Large-format prints, posters, and signage for gallery exhibits.</p>
+            </div>
+          </button>
+        </article>
+
+        <!-- More sample cards to show layout -->
+        <article class="group bg-white rounded-lg overflow-hidden shadow" data-type="project">
+          <button class="w-full text-left" data-project-index="3">
+            <div class="h-48 bg-slate-200 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project 4" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Editorial Layouts</h3>
+              <p class="text-sm text-slate-500 mt-2">Magazine spreads and long-form layouts with typographic hierarchy.</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="group bg-white rounded-lg overflow-hidden shadow" data-type="project">
+          <button class="w-full text-left" data-project-index="4">
+            <div class="h-48 bg-slate-200 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project 5" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Limited Edition Prints</h3>
+              <p class="text-sm text-slate-500 mt-2">Signed prints and framing-ready artwork.</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="group bg-white rounded-lg overflow-hidden shadow" data-type="project">
+          <button class="w-full text-left" data-project-index="5">
+            <div class="h-48 bg-slate-200 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project 6" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Environmental Graphics</h3>
+              <p class="text-sm text-slate-500 mt-2">Wayfinding and large scale murals for public spaces.</p>
+            </div>
+          </button>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- About & Contact -->
+    <section id="about" class="mt-16 bg-white rounded-lg p-6 shadow">
+      <div class="grid md:grid-cols-3 gap-6 items-center">
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-semibold">About</h2>
+          <p class="mt-3 text-slate-600">I work across analog and digital media, exploring texture, color, and type. My practice includes commissions, exhibitions, and brand collaborations. I’m available for freelance and teaching engagements.</p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm text-slate-600">
+            <li>• Editorial illustration</li>
+            <li>• Visual identity</li>
+            <li>• Print design</li>
+            <li>• Exhibition & environmental graphics</li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <div class="w-36 h-36 mx-auto rounded-full overflow-hidden shadow-lg">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Portrait" class="w-full h-full object-cover">
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Based in — City, Country</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mt-8">
+      <h2 class="text-2xl font-semibold">Contact</h2>
+      <p class="text-sm text-slate-600 mt-1">Interested in a project or collaboration? Send a message.</p>
+      <form id="contactForm" class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+        <input name="name" placeholder="Your name" class="p-3 border rounded" required />
+        <input name="email" type="email" placeholder="Email" class="p-3 border rounded" required />
+        <input name="subject" placeholder="Subject" class="p-3 border rounded sm:col-span-2" />
+        <textarea name="message" placeholder="Message" rows="5" class="p-3 border rounded sm:col-span-2" required></textarea>
+        <div class="sm:col-span-2">
+          <button type="submit" class="bg-slate-900 text-white px-5 py-3 rounded">Send Message</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="mt-12 text-center text-sm text-slate-500">© <span id="year"></span> Artist & Designer — Built with HTML, Tailwind CSS, and vanilla JS.</footer>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black/70 hidden items-center justify-center p-6 z-50">
+    <div class="relative max-w-4xl w-full">
+      <button id="lightboxClose" class="absolute right-4 top-4 bg-white/70 rounded-full p-2">✕</button>
+      <img id="lightboxImg" src="" alt="" class="w-full h-[60vh] object-contain rounded" />
+      <div id="lightboxCaption" class="mt-2 text-white text-center text-sm"></div>
+    </div>
+  </div>
+
+  <script src="/scripts/main.js"></script>
+</body>
+</html>
